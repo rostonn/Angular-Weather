@@ -1,5 +1,7 @@
 # AngularWeather
 
+Angular app get's a user's geolocation and show's city information and temperature
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
 
 ## Development server
