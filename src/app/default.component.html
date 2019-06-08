@@ -1,0 +1,24 @@
+<div *ngIf="city.name && weather.temp && timeOfDay" id="container" [style.background-image]="getImage()">
+    <div id="greeting">
+        <div id="greet_value">{{timeOfDay}} {{name}}</div>
+    </div>
+    <div class="weather_container">
+        <span id="temp">
+            <span id="temp_value">{{weather.temp}}&deg;F</span>
+        </span>
+    </div>
+
+    <div id="date">
+        {{date}}
+    </div>
+
+    <div id="city">
+        {{city.name}} <br/> {{city.county }}, {{city.state}} <br/> {{city.country}}
+    </div>
+
+</div>
+
+<div *ngIf="error">
+    <h1>{{error}}</h1>
+    <img src="/assets/img/sad.jpeg" />
+</div>
