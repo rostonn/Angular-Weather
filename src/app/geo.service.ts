@@ -18,7 +18,6 @@ export class GeoService implements OnInit {
 
     
     getPosition(): Observable<Object> {
-        console.log('Getting Position');
         return Observable.create(observer => {
             navigator.geolocation.watchPosition((pos: Position) => {
                 this.geo = pos.coords;

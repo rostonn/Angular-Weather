@@ -12,10 +12,10 @@ import { NameService } from './name.service';
 export class DefaultComponent implements OnInit {
     title = 'City Weather App';
     error = null;
-    geo = {};
+    geo: any = {};
     errorMessage = '';
-    city = {};
-    weather = {};
+    city: any = {};
+    weather: any = {};
     timeOfDay = '';
     date = moment().format('MMMM Do YYYY, h:mm:ss a');
     testD: any = moment().format('H:mm:ss');
@@ -49,16 +49,13 @@ export class DefaultComponent implements OnInit {
     }
 
     getPosition() {
-        console.log('Getting Position default component');
         this.geoService.getPosition()
             .subscribe(
                 pos => {
-                    console.log('Position Returned', pos);
                     this.geo = pos
                     this.getCity(pos)
                 },
                 error => {
-                    // this.errorMessage = <any>error
                     console.log('GetPostition Error');
                     console.log(error);
                     this.error = 'GetPosition Error: ' + error.message + ' Please Click info in the address bar, and "Allow Location" to use this site ';
