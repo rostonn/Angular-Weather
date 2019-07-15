@@ -1,4 +1,4 @@
-<div *ngIf="city.name && weather.temp && timeOfDay" id="container" [style.background-image]="getImage()">
+<div *ngIf="city.name && weather.temp && timeOfDay; else loading" id="container" [style.background-image]="getImage()">
     <div id="greeting">
         <div id="greet_value">{{timeOfDay}} {{name}}</div>
     </div>
@@ -17,6 +17,12 @@
     </div>
 
 </div>
+
+<ng-template #loading>
+    Loading ...
+</ng-template>
+
+
 
 <div *ngIf="error">
     <h1>{{error}}</h1>
